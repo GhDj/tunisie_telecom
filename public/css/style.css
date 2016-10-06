@@ -1,0 +1,135 @@
+body {
+    background: #ffffff;
+}
+
+tr th, tr td {
+    text-align: center;
+}
+
+.navbar-default {
+    background: url("../images/header.png");
+    height: 70px;
+}
+
+.navbar-brand {
+    padding: 0px;
+}
+
+#sidebar ul {
+    padding-left: 0px;
+}
+
+#sidebar ul li {
+    text-decoration: none;
+    list-style: none;
+    background: #515151;
+    padding: 5px;
+    margin: 40px 0px;
+}
+
+#sidebar ul li a img {
+    width: 50px;
+    cursor: pointer;
+}
+
+#sidebar .dropdown-menu {
+    top:-100%;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    margin-left: 70px;
+}
+
+#sidebar .dropdown-menu li {
+    margin: 15px 0px;
+    color: #ffffff;
+}
+
+#sidebar .dropdown-menu li:hover {
+    background: #49babd;
+}
+
+#sidebar .dropdown-menu li a {
+    color: #ffffff;
+}
+
+#sidebar .dropdown-menu li a:hover {
+    background: transparent;
+}
+
+.panel {
+    background: #515151;
+    border: none;
+}
+
+.panel-heading {
+    background: #515151 !important;
+    border: none !important;
+    text-align: center;
+    color: #ffffff !important;
+}
+
+.btn {
+    border: none;
+    border-radius: 0;
+    padding: 10px 15px;
+    background: #49babd;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 0;
+    -moz-border-radius: 0;
+    height: 50px;
+}
+
+.input-group-addon {
+    border-radius: 0;
+    -moz-border-radius: 0;
+    background: #ffffff ;
+    padding: 0 20px;
+}
+
+.panel-body {
+    color: #ffffff;
+}
+
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-top: 40px solid #49babd;
+    position: absolute;
+    top: 0;
+}
+
+#logout {
+    right: -30px;
+    top: -8px;
+    color: white;
+}
+
+#notif-arrow {
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-top: 40px solid #49babd;
+    position: absolute;
+    top: 0;
+    right: 0px;
+}
+
+#notif {
+    right: 33px;
+    top: 4px;
+    color: white;
+}
+
+.popover {
+    width: 280px;
+}
