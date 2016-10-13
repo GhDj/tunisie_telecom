@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => ['auth','admin']], function () {
+Route::group(['middleware' => ['auth']], function () {
 
     Route::resource('client', 'ClientController');
 
@@ -30,5 +30,12 @@ Route::group(['middleware' => ['auth','admin']], function () {
     Route::post('client/delete', 'ClientController@delete')->name('client.delete');
 
     Route::resource('order', 'OrderController');
+
+
+
+});
+
+Route::group(['middleware' => ['auth','admin']], function () {
+    Route::resource('user', 'UserController');
 
 });

@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Client;
-use App\Materiel;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class ClientController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::paginate(10);
-        return view('client.index', ['clients' => $clients, 'notif'=>$notif = Materiel::where('quantite','<','10')->get()]);
+        $users = User::paginate(10);
+        return view('user.index', ['users' => $users]);
     }
 
     /**
@@ -28,7 +27,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        return redirect('register');
     }
 
     /**
@@ -39,8 +38,7 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        Client::create($request->all());
-        return redirect('client');
+        //
     }
 
     /**
@@ -62,8 +60,8 @@ class ClientController extends Controller
      */
     public function edit($id)
     {
-        $client = Client::findOrFail($id);
-        return view('client.edit', ['client' => $client, 'notif'=>$notif = Materiel::where('quantite','<','10')->get()]);
+        $user = User::findOrFail($id);
+        return view('user.edit', ['user' => $user]);
     }
 
     /**
@@ -75,15 +73,7 @@ class ClientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $client = Client::findOrFail($id);
-        $client->update($request->all());
-        return redirect('client',[ 'notif'=>$notif = Materiel::where('quantite','<','10')->get()]);
-    }
-
-    public function supprimer()
-    {
-        $clients = Client::paginate(15);
-        return view('client.destroy',['clients'=>$clients, 'notif'=>$notif = Materiel::where('quantite','<','10')->get()]);
+        //
     }
 
     /**
@@ -92,17 +82,9 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        //dd($request->all());
-    }
-
-    public function delete(Request $request)
-    {
-        //dd($request->all());
-        $c = Client::where('cin',$request->cin)->first();
-        //dd($c->id);
-        Client::destroy($c->id);
-        return redirect('client',[ 'notif'=>$notif = Materiel::where('quantite','<','10')->get()]);
+        User::destroy($id);
+        return redirect('user');
     }
 }
